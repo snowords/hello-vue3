@@ -6,6 +6,9 @@
       <router-link to="/">去首页</router-link>
     </li>
     <li>
+      <router-link to="/other">去命名视图</router-link>
+    </li>
+    <li>
       <router-link to="/hello">去helloworld</router-link>
     </li>
     <li>
@@ -22,7 +25,8 @@
     </li>
   </ul>
 
-  <router-view></router-view>
+  <router-view class="view"></router-view>
+  <router-view class="view" name="a"></router-view>
   
   <input @keyup.enter.exact="submit" @keyup.shift="shiftKey" placeholder="测试回车事件"/>
 </template>

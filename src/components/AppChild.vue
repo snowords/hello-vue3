@@ -18,18 +18,19 @@
 <script>
 export default {
   name: 'AppChild',
+  props: ['username', 'usercode'],
   data() {
     return {
       isShowing: false
     }
   },
   computed: {
-    username() {
-      return this.$route.params.username
-    },
-    usercode() {
-      return this.$route.params.usercode
-    }
+    // username() {
+    //   return this.$route.params.username
+    // },
+    // usercode() {
+    //   return this.$route.params.usercode
+    // }
   },
   methods: {
     toggleShow() {

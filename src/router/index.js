@@ -10,9 +10,22 @@ const UserHome = { template: '<h3>Home</h3>' }
 const UserProfile = { template: '<h3>Profile</h3>' }
 const UserPosts = { template: '<h3>Posts</div>' }
 const routes = [
-  { path: '/', component: TabHome},
-  { path: '/hello', component: HelloWorld },
-  { path: '/child/:username/posts/:usercode', component: AppChild },
+  { 
+    path: '/', 
+    components: { 
+      default: TabHome,
+      a: AppChild
+    }
+  },
+  { 
+    path: '/other', 
+    components: { 
+      default: AppChild,
+      a: TabHome
+    }
+  },
+  { path: '/hello', component: HelloWorld, alias: '/nihao' },
+  { path: '/child/:username/posts/:usercode', component: AppChild, props: true},
   // 正则匹配数字
   { path: '/:orderId(\\d+)',component: TabPosts },
   { 
